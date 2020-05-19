@@ -1,4 +1,4 @@
-# Expense_Tracker
+# Expense Tracker
 
 This application is a simple expense tracker built using flutter.
 
