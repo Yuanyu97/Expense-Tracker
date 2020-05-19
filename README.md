@@ -2,6 +2,8 @@
 
 This application is a simple expense tracker built using flutter.
 
+<img src="images/screenshot.png" width="200">
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
