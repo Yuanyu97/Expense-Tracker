@@ -1,8 +1,9 @@
 # Expense Tracker
 
-This application is a simple expense tracker built using flutter.
+This application is a simple expense tracker built using flutter. It is not able to store data yet but it will be able to do so in the near future!
 
-<img src="images/screenshot.png" width="200">
+<img src="images/android_screenshot.png" width="200" height="400">
+<img src="images/ios_screenshot.png" width="200" height="400">
 
 ## Getting Started
 

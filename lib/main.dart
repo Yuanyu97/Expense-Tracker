@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: (mediaQuery.size.height -
                         appBar.preferredSize.height -
                         mediaQuery.padding.top) *
-                    0.7,
+                    0.3,
                 child: Chart(_recentTransactions),
               ),
             if (!isLandscape) txListWidget,
