@@ -134,6 +134,37 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
   }
 
+  Widget _cupertinoNavigationBar() {
+    return CupertinoNavigationBar(
+            middle: Text(
+              "Personal Expenses",
+            ),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                GestureDetector(
+                  child: Icon(CupertinoIcons.add),
+                  onTap: () => _startAddNewTx(context),
+                ),
+              ],
+            ),
+          );
+  }
+
+  Widget _appBar() {
+    return AppBar(
+            title: Text(
+              'Expenditure Tracker',
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.add),
+                onPressed: () => _startAddNewTx(context),
+              )
+            ],
+          );
+  }
+
   void _startAddNewTx(BuildContext context) {
     showModalBottomSheet(
         context: context,
@@ -149,32 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final mediaQuery = MediaQuery.of(context);
     final isLandscape =
         mediaQuery.orientation == Orientation.landscape; //boolean
-    final PreferredSizeWidget appBar = Platform.isIOS
-        ? CupertinoNavigationBar(
-            middle: Text(
-              "Personal Expenses",
-            ),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                GestureDetector(
-                  child: Icon(CupertinoIcons.add),
-                  onTap: () => _startAddNewTx(context),
-                ),
-              ],
-            ),
-          )
-        : AppBar(
-            title: Text(
-              'Expenditure Tracker',
-            ),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.add),
-                onPressed: () => _startAddNewTx(context),
-              )
-            ],
-          );
+    final PreferredSizeWidget appBar = Platform.isIOS ? _cupertinoNavigationBar() : _appBar();
     final txListWidget = Container(
       height: (mediaQuery.size.height -
               appBar.preferredSize.height -
