@@ -27,27 +27,27 @@ class TransactionItem extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(6),
             child: FittedBox(
-                child: Text("\$${transaction[index].amount}")),
+                child: Text("\$${transaction.amount}")),
           ),
         ),
         title: Text(
-          transaction[index].title,
+          transaction.title,
           style: Theme.of(context).textTheme.title,
         ),
         subtitle: Text(
-          DateFormat.yMMMd().format(transaction[index].date),
+          DateFormat.yMMMd().format(transaction.date),
         ),
         trailing: MediaQuery.of(context).size.width > 460
             ? FlatButton.icon(
                 textColor: Theme.of(context).errorColor,
-                onPressed: () => deleteTx(transaction[index].id),
+                onPressed: () => deleteTx(transaction.id),
                 icon: const Icon(Icons.delete),
                 label: const Text("Delete"),
               )
             : IconButton(
                 icon: const Icon(Icons.delete),
                 color: Theme.of(context).errorColor,
-                onPressed: () => deleteTx(transaction[index].id),
+                onPressed: () => deleteTx(transaction.id),
               ),
       ),
     );
